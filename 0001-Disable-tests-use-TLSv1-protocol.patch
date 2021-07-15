@@ -1,0 +1,48 @@
+From fa599136b2c79e8ace41cedea6d74c057b1b8bc0 Mon Sep 17 00:00:00 2001
+From: lingsheng <lingsheng@huawei.com>
+Date: Tue, 23 Feb 2021 09:31:51 +0800
+Subject: [PATCH] Disable tests use TLSv1 protocol
+
+---
+ api/src/test/java/org/xnio/ssl/JsseXnioSslTestCase.java | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/api/src/test/java/org/xnio/ssl/JsseXnioSslTestCase.java b/api/src/test/java/org/xnio/ssl/JsseXnioSslTestCase.java
+index e8c9a0f..552e313 100644
+--- a/api/src/test/java/org/xnio/ssl/JsseXnioSslTestCase.java
++++ b/api/src/test/java/org/xnio/ssl/JsseXnioSslTestCase.java
+@@ -237,6 +237,7 @@ public class JsseXnioSslTestCase {
+         assertNull(boundChannel.getOption(Options.STACK_SIZE));
+     }
+ 
++    /*
+     @Test
+     public void connectSsl3() throws Exception {
+         final InetSocketAddress localAddress = new InetSocketAddress(500);
+@@ -258,6 +259,7 @@ public class JsseXnioSslTestCase {
+         assertEquals(serverAddress, connection.getPeerAddress());
+         assertTrue(connection.getOption(Options.TCP_NODELAY));
+     }
++    */
+ 
+     @Test
+     @Ignore
+@@ -343,6 +345,7 @@ public class JsseXnioSslTestCase {
+         assertNull(boundChannel.getOption(Options.STACK_SIZE));
+     }
+ 
++    /*
+     @Test
+     public void connectSslChannel3() throws Exception {
+         final InetSocketAddress localAddress = new InetSocketAddress(500);
+@@ -364,6 +367,7 @@ public class JsseXnioSslTestCase {
+         assertEquals(serverAddress, channel.getPeerAddress());
+         assertTrue(channel.getOption(Options.TCP_NODELAY));
+     }
++    */
+ 
+     @Test
+     public void connectSslChannel4() throws Exception {
+-- 
+2.23.0
+
