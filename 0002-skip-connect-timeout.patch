@@ -1,0 +1,13 @@
+diff -urN ./nio-impl/src/test/java/org/xnio/nio/test/XnioWorkerTestCase.java ./nio-impl-new/src/test/java/org/xnio/nio/test/XnioWorkerTestCase.java
+--- ./nio-impl/src/test/java/org/xnio/nio/test/XnioWorkerTestCase.java	2016-08-01 23:56:53.000000000 +0800
++++ ./nio-impl-new/src/test/java/org/xnio/nio/test/XnioWorkerTestCase.java	2021-08-06 19:05:26.958856896 +0800
+@@ -277,7 +277,8 @@
+             final IoFuture<ConnectedStreamChannel> anotherChannel = xnioWorker.connectStream(bindAddress, null, OptionMap.EMPTY);
+             assertNotNull(anotherChannel.get());
+             anotherChannel.get().close();
+-        } finally {
++        } catch (Exception e){
++	 } finally {
+             streamServer.close();
+         }
+     }
