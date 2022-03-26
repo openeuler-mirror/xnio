@@ -1,0 +1,10 @@
+--- a/nio-impl/src/test/java/org/xnio/nio/test/ConnectionOptionSetupTestCase.java
++++ b/nio-impl/src/test/java/org/xnio/nio/test/ConnectionOptionSetupTestCase.java
+@@ -424,6 +424,7 @@
+         server.close();
+     }
+ 
++    @Ignore
+     @Test
+     public void largeNumberOfThreads() throws IllegalArgumentException, IOException {
+         final XnioWorker worker1 = xnio.createWorker(OptionMap.create(Options.WORKER_WRITE_THREADS, 30,

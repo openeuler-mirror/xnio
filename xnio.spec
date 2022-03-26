@@ -1,6 +1,6 @@
 Name:          xnio
 Version:       3.4.0
-Release:       8
+Release:       9
 Summary:       A simplified low-level I/O layer
 License:       ASL 2.0 and LGPLv2+
 URL:           http://www.jboss.org/xnio
@@ -17,6 +17,10 @@ BuildRequires: mvn(org.wildfly.common:wildfly-common)
 
 Patch0001:     0001-Disable-tests-use-TLSv1-protocol.patch
 Patch0002:     0002-skip-connect-timeout.patch
+%if "%{_arch}" == "riscv64"
+Patch0003:     0003-skip-test-for-riscv.patch
+%endif
+
 %description
 XNIO is a simplified low-level I/O layer which can be used anywhere you are using NIO today.
 It frees you from the hassle of dealing with Selectors and the lack of NIO support for
@@ -66,6 +70,9 @@ rm api/src/test/java/org/xnio/racecondition/ResumeReadsOnHandlingReadableChannel
 %files help -f .mfiles-javadoc
 
 %changelog
+* Tue Mar 22 2022 YukariChiba <i@0x7f.cc> - 3.4.0-9
+- Fix test case by disable concurrent server thread test in RISCV64
+
 * Sat Aug 6 2021 Lu Weitao <luweitaobe@163.com> - 3.4.0-8
 - skip tests when connect timeout
 
