@@ -1,6 +1,14 @@
 --- a/nio-impl/src/test/java/org/xnio/nio/test/ConnectionOptionSetupTestCase.java
 +++ b/nio-impl/src/test/java/org/xnio/nio/test/ConnectionOptionSetupTestCase.java
-@@ -424,6 +424,7 @@
+@@ -28,6 +28,7 @@
+ import javax.net.ssl.KeyManager;
+ import javax.net.ssl.TrustManager;
+ 
++import org.junit.Ignore;
+ import org.junit.Test;
+ import org.xnio.FileAccess;
+ import org.xnio.Option;
+@@ -424,6 +425,7 @@
          server.close();
      }
  
