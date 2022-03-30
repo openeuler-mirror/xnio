@@ -1,6 +1,6 @@
 Name:          xnio
 Version:       3.4.0
-Release:       9
+Release:       10
 Summary:       A simplified low-level I/O layer
 License:       ASL 2.0 and LGPLv2+
 URL:           http://www.jboss.org/xnio
@@ -70,6 +70,9 @@ rm api/src/test/java/org/xnio/racecondition/ResumeReadsOnHandlingReadableChannel
 %files help -f .mfiles-javadoc
 
 %changelog
+* Wed Mar 30 2022 YukariChiba <i@0x7f.cc> - 3.4.0-10
+- Fix a previous mistake introduced in 3.4.0-9
+
 * Tue Mar 22 2022 YukariChiba <i@0x7f.cc> - 3.4.0-9
 - Fix test case by disable concurrent server thread test in RISCV64
 
